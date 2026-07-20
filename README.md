@@ -14,7 +14,7 @@
 | Target | End user mailbox, simulated environment |
 | Outcome | Confirmed phishing, IOCs extracted and documented |
 
----
+
 
 ##  What Happened
 
@@ -22,7 +22,7 @@ An email arrived claiming to be from the Microsoft Security Team. It used urgenc
 
 Content is not evidence. The investigation set the wording aside and tested what the email could not fake: the sender identity, the domain behind it, and the link inside it.
 
----
+
 
 ##  Header and Sender Analysis
 
@@ -47,13 +47,13 @@ The display name and the domain do not match. Microsoft does not send security a
 
 ![Header and Sender Mismatch](screenshots/header-sender-analysis.png)
 
----
+
 
 ##  Email Address Check
 
 The sender address has zero breach history on Have I Been Pwned. A clean breach history does not clear an address. It only means this specific inbox has not shown up in a public dump yet.
 
----
+
 
 ##  Domain Analysis
 
@@ -86,7 +86,7 @@ A domain sending security alerts on behalf of Microsoft with no DMARC policy has
 
 None of this infrastructure connects to Microsoft. It points to a small Spanish hosting environment with no email authentication in place.
 
----
+
 
 ##  Link Analysis
 
@@ -112,7 +112,7 @@ The scores conflict, and that conflict is the point. Reputation engines lag behi
 
 ![AbuseIPDB Result](screenshots/abuseipdb-result.png)
 
----
+
 
 ##  Indicators Extracted
 
@@ -124,7 +124,7 @@ The scores conflict, and that conflict is the point. Reputation engines lag behi
 - Urgency and fear-based language pushing immediate action
 - Generic greeting and an unexpected attachment framed as a security report
 
----
+
 
 ##  Detection Logic
 
@@ -138,7 +138,7 @@ An email gets classified as phishing when the technical evidence stacks:
 
 No single point convicts the email on its own. The combination does.
 
----
+
 
 ##  MITRE ATT&CK Mapping
 
@@ -148,7 +148,7 @@ No single point convicts the email on its own. The combination does.
 | Initial Access | T1566.002 | Spearphishing link |
 | Defense Evasion | T1036 | Masquerading, domain impersonation |
 
----
+
 
 ##  Analyst Conclusion
 
@@ -158,7 +158,7 @@ The sender borrowed Microsoft's name while sending from an unrelated Spanish dom
 
 Some platforms returned clean or low-risk scores. That split is expected against fresh or rotating attacker infrastructure, and it is why a verdict here rests on the full set of indicators, not any single tool.
 
----
+
 
 ##  Recommended Response
 
@@ -167,7 +167,7 @@ Some platforms returned clean or low-risk scores. That split is expected against
 - Add the IOCs to detection rules so the next instance is caught on delivery
 - Issue a user awareness notice covering this specific lure pattern
 
----
+
 
 ##  Key Skills Demonstrated
 
@@ -177,7 +177,7 @@ Some platforms returned clean or low-risk scores. That split is expected against
 - Extracting IOCs in a form that can be actioned into blocklists and detection rules
 - Mapping observed behavior to MITRE ATT&CK
 
----
+
 
 ##  Conclusion
 
@@ -187,11 +187,11 @@ The investigation tested every layer of the email that could not be faked: the s
 
 This project reflects practical blue team skills directly applicable to SOC analyst roles where phishing triage, IOC extraction, and threat intelligence correlation are daily responsibilities.
 
----
+
 
 ##  Repository Structure
 
-```
+
 phishing-email-triage/
 ├── README.md
 ├── LICENSE
@@ -203,7 +203,7 @@ phishing-email-triage/
     ├── virustotal-result.png
     ├── hybrid-analysis-result.png
     └── abuseipdb-result.png
-```
+
 
 ---
 
