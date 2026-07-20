@@ -196,22 +196,13 @@ The investigation tested every layer of the email that could not be faked: the s
 This project reflects practical blue team skills directly applicable to SOC analyst roles where phishing triage, IOC extraction, and threat intelligence correlation are daily responsibilities.
 
 phishing-email-triage/
-
 ├── README.md
-
 ├── LICENSE
-
 └── screenshots/
     ├── header-sender-analysis.png
-    
     ├── mxtoolbox-result.png
-    
     ├── dns-dumpster-result.png
-    
     ├── domaintools-result.png
-    
     ├── virustotal-result.png
-    
     ├── hybrid-analysis-result.png
-    
     └── abuseipdb-result.png
