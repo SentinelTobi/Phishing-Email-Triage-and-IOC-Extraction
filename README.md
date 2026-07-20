@@ -6,7 +6,7 @@
 
 ##  At a Glance
 
-| Field | Detail |
+| Field |Detail |
 |-------|--------|
 | Attack Type | Phishing, credential theft attempt |
 | Vector | Email with spoofed sender identity and shortened link |
@@ -183,7 +183,6 @@ This project reflects practical blue team skills directly applicable to SOC anal
 
 
 ##  Repository Structure
-
 
 
 phishing-email-triage/
