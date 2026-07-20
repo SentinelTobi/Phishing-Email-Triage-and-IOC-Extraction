@@ -10,7 +10,7 @@
 |-------|--------|
 | Attack Type | Phishing, credential theft attempt |
 | Vector | Email with spoofed sender identity and shortened link |
-| Tools Used | Have I Been Pwned, MXToolbox, DNS Dumpster, DomainTools, VirusTotal, Hybrid Analysis, ScamAdviser, Criminal IP, Talos Intelligence, AbuseIPDB, Scamalytics |
+| Tools Used | Have I Been Pwned, MXToolbox, DNS Dumpster, VirusTotal, Hybrid Analysis, ScamAdviser, Criminal IP, Talos Intelligence, AbuseIPDB, Scamalytics |
 | Target | End user mailbox, simulated environment |
 | Outcome | Confirmed phishing, IOCs extracted and documented |
 
@@ -76,13 +76,6 @@ A domain sending security alerts on behalf of Microsoft with no DMARC policy has
 
 ![DNS Dumpster Lookup](screenshots/dns-dumpster-result.png)
 
-**DomainTools results:**
-
-- Name servers: NS34.TREVENQUE.ES, host to 3,041 domains. SERLOGAL.ARNOIA.COM, host to 1 domain
-- IP location: Granada, Spain, SIAPI networks
-- IP address: 217.18.163.139
-
-![DomainTools WHOIS Lookup](screenshots/domaintools-result.png)
 
 None of this infrastructure connects to Microsoft. It points to a small Spanish hosting environment with no email authentication in place.
 
@@ -96,12 +89,12 @@ The shortened URL expanded through CheckShortURL to a TinyURL anti-spam intersti
 
 | Source | Finding |
 |--------|---------|
-| VirusTotal | 2 of 95 vendors flagged the URL as phishing. Serving IP 104.18.111.161, United States |
+| VirusTotal | 1 of 92 vendors flagged the URL as phishing. Serving IP 104.18.111.161, United States |
 | Hybrid Analysis | Threat score 64/100. AV detection marked clean |
 | ScamAdviser | 0% risk shown as clean |
 | Criminal IP | 20% clean rating |
 | Talos Intelligence | Web reputation listed as favorable |
-| AbuseIPDB | IP reported 95 times, mostly for phishing. 0% abuse confidence. ISP Cloudflare, San Francisco. Last report 1 week old |
+| AbuseIPDB | IP reported 118 times, mostly for phishing. 0% abuse confidence. ISP Cloudflare, San Francisco. Last report 1 week old |
 | Scamalytics | Fraud score 0, low risk, no VPN or public proxy detected |
 
 The scores conflict, and that conflict is the point. Reputation engines lag behind fresh infrastructure. Attackers rotate domains and IPs faster than blocklists update, so a clean score from one source next to a phishing flag and 95 abuse reports from others is normal for a live campaign, not a reason to clear the link.
@@ -120,7 +113,7 @@ The scores conflict, and that conflict is the point. Reputation engines lag behi
 - No DMARC record on the sending domain
 - Shortened URL with bracket obfuscation hiding the true destination
 - Flagged by VirusTotal as phishing, threat score 64/100 on Hybrid Analysis
-- Serving IP 104.18.111.161, reported 95 times on AbuseIPDB
+- Serving IP 104.17.112.233, reported 118 times on AbuseIPDB
 - Urgency and fear-based language pushing immediate action
 - Generic greeting and an unexpected attachment framed as a security report
 
