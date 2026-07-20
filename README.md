@@ -186,17 +186,10 @@ This project reflects practical blue team skills directly applicable to SOC anal
 
 
 
-phishing-email-triage/
-├── README.md
-├── LICENSE
-└── screenshots/
-    ├── header-sender-analysis.png
-    ├── mxtoolbox-result.png
-    ├── dns-dumpster-result.png
-    ├── domaintools-result.png
-    ├── virustotal-result.png
-    ├── hybrid-analysis-result.png
-    └── abuseipdb-result.png
+
+
+
+
 
 phishing-email-triage/
 ├── README.md
@@ -209,6 +202,8 @@ phishing-email-triage/
     ├── virustotal-result.png
     ├── hybrid-analysis-result.png
     └── abuseipdb-result.png
+
+
 ---
 
 ## 📜 License
