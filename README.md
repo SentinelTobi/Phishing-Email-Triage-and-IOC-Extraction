@@ -1,6 +1,7 @@
 # Phishing-Email-Triage-and-IOC-Extraction
 Phishing email triage and IOC extraction using OSINT tools including VirusTotal, MXToolbox, AbuseIPDB, and Hybrid Analysis
 
+
 **At a Glance**
 
 Field	Detail
@@ -197,7 +198,9 @@ This project reflects practical blue team skills directly applicable to SOC anal
 phishing-email-triage/
 
 ├── README.md
+
 ├── LICENSE
+
 └── screenshots/
     ├── header-sender-analysis.png
     
