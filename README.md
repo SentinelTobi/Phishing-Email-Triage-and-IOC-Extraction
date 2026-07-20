@@ -1,24 +1,24 @@
 # Phishing-Email-Triage-and-IOC-Extraction
-Phishing email triage and IOC extraction using OSINT tools including VirusTotal, MXToolbox, AbuseIPDB, and Hybrid Analysis
-
+**Phishing email triage and IOC extraction using OSINT tools including VirusTotal, MXToolbox, AbuseIPDB, and Hybrid Analysis
+**
 
 **At a Glance**
 
-Field	Detail
+Field	    Detail
 Attack Type	Phishing, credential theft attempt
 Vector	Email with spoofed sender identity and shortened link
 Tools Used	Have I Been Pwned, MXToolbox, DNS Dumpster, DomainTools, VirusTotal, Hybrid Analysis, ScamAdviser, Criminal IP, Talos Intelligence, AbuseIPDB, Scamalytics
 Target	End user mailbox, simulated environment
 Outcome	Confirmed phishing, IOCs extracted and documented
 
-________________________________________
+
 
 **What Happened**
 
 An email arrived claiming to be from the Microsoft Security Team. It used urgency and a threat of account suspension to push the reader into acting fast.
 
 Content is not evidence. The investigation set the wording aside and tested what the email could not fake: the sender identity, the domain behind it, and the link inside it.
-________________________________________
+
 **Header and Sender Analysis**
 
 Sender name: Microsoft Security Team. Sender email: info@libreriacies.es.
@@ -49,7 +49,7 @@ Show Image
 
 **Email Address Check**
 The sender address has zero breach history on Have I Been Pwned. A clean breach history does not clear an address. It only means this specific inbox has not shown up in a public dump yet.
-________________________________________
+
 **Domain Analysis**
 
 **MXToolbox results:**
@@ -87,7 +87,6 @@ Show Image
 Show Image
 
 None of this infrastructure connects to Microsoft. It points to a small Spanish hosting environment with no email authentication in place.
-________________________________________
 
 **Link Analysis**
 
@@ -109,7 +108,7 @@ Show Image
 Show Image
 
 Show Image
-________________________________________
+
 
 **Indicators Extracted**
 
@@ -127,7 +126,7 @@ ________________________________________
 
 •	Generic greeting and an unexpected attachment framed as a security report
 
-________________________________________
+
 
 **Detection Logic**
 
@@ -145,14 +144,14 @@ An email gets classified as phishing when the technical evidence stacks:
 
 No single point convicts the email on its own. The combination does.
 
-________________________________________
+
 **MITRE ATT&CK Mapping**
 
 Tactic	Technique ID	Description
 Initial Access	T1566	Phishing
 Initial Access	T1566.002	Spearphishing link
 Defense Evasion	T1036	Masquerading, domain impersonation
-________________________________________
+
 
 **Analyst Conclusion**
 
@@ -161,7 +160,7 @@ This email is a phishing attempt, confirmed on header, domain, and link evidence
 The sender borrowed Microsoft's name while sending from an unrelated Spanish domain with no DMARC protection. The embedded link used a shortened, bracket-obfuscated URL that VirusTotal flagged as phishing and that carries a 64/100 threat score plus 95 prior abuse reports on its serving IP. Urgency language and a generic greeting round out a message built to bypass judgment, not earn trust.
 
 Some platforms returned clean or low-risk scores. That split is expected against fresh or rotating attacker infrastructure, and it is why a verdict here rests on the full set of indicators, not any single tool.
-________________________________________
+
 
 **Recommended Response**
 
@@ -172,7 +171,7 @@ ________________________________________
 •	Add the IOCs to detection rules so the next instance is caught on delivery
 
 •	Issue a user awareness notice covering this specific lure pattern
-________________________________________
+
 
 **Key Skills Demonstrated**
 
@@ -185,7 +184,6 @@ ________________________________________
 •	Extracting IOCs in a form that can be actioned into blocklists and detection rules
 
 •	Mapping observed behavior to MITRE ATT&CK
-________________________________________
 
 **Conclusion**
 
