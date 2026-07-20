@@ -184,7 +184,6 @@ This project reflects practical blue team skills directly applicable to SOC anal
 
 ##  Repository Structure
 
-
 phishing-email-triage/
 ├── README.md
 ├── LICENSE
